@@ -1,4 +1,4 @@
-﻿@model BulkyWeb.Models.Category
+﻿@model Bulky.Models.Category
 
 @{
     ViewData["Title"] = "Create";
@@ -8,6 +8,7 @@
 
 <h4>Category</h4>
 <hr />
+<div class="container">
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
@@ -22,15 +23,21 @@
                 <input asp-for="DispalyOrder" class="form-control" />
                 <span asp-validation-for="DispalyOrder" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group col-3 pt-3">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
+</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="row ">
+    @* <div class="col-3  form-group ">
+        <button type="submit" class="btn btn-primary form-control">Create</button>
+    </div> *@
+    <div class="col-4 pt-0">
+    <a asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
+</div>
 </div>
 
 @section Scripts {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BulkyWeb.Models
+namespace Bulky.Models
 {
     public class Category
     {
@@ -9,7 +9,7 @@ namespace BulkyWeb.Models
 
         public string? Name { get; set; }
 
-        public string? DispalyOrder { get; set; }
+        public int? DispalyOrder { get; set; }
 
     }
 }
