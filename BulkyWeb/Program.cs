@@ -9,6 +9,7 @@ builder.Services.AddDbContext<BulkyWebContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'BulkyWebContext' not found.")));
 
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
