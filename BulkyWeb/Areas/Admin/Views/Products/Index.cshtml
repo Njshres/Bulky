@@ -17,7 +17,7 @@
             <h4>Product List</h4>
         </div>
         <div class="col-6 text-end">
-            <a asp-action="Create" class="btn btn-primary"><i class="bi bi-file-plus"></i>Create New Product</a>
+            <a asp-action="Upsert" class="btn btn-primary"><i class="bi bi-file-plus"></i>Create New Product</a>
         </div>
     </div>
     <table class="table table-bordered table-striped">
@@ -86,7 +86,7 @@
                     </td>
 
                     <td>
-                        <a asp-action="Edit" class="btn btn-primary" asp-route-id="@item.Id">
+                        <a asp-action="Upsert" class="btn btn-primary" asp-route-id="@item.Id">
                             <i class="bi bi-pen"></i>Edit
                         </a> |
                         <a asp-action="Details" class="btn btn-primary" asp-route-id="@item.Id">
