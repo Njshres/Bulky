@@ -3,13 +3,15 @@
 @{
     ViewData["Title"] = "Upsert";
 }
-<h2 class="text-white py-2"> @(Model.Product.Id != 0 ? "Update" : "Create") Product</h2>
+<h2 class="text-dark py-2"> @(Model.Product.Id != 0 ? "Update" : "Create") Product</h2>
 <hr />
 <div class="container">
+  
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-10">
             <form asp-action="Upsert" enctype="multipart/form-data">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input asp-for="Product.ImageUrl" hidden />
                 <div class="form-group">
                     <label asp-for="Product.Title" class="control-label"></label>
                     <input asp-for="Product.Title" class="form-control" />
@@ -73,6 +75,12 @@
                     }
                 </div>
             </form>
+        </div>
+        <div class="col-2">
+           <img src="@Model.Product.ImageUrl" width="100%"
+           style="border-radius:5px; border:1px solid #bbb9b9" />
+        @*     <img src="~/images/product/0f440474-356c-4354-ba6a-9bda346033e0.jpeg" /> *@
+           @*  <img src="@Model.Product.ImageUrl" /> *@
         </div>
     </div>
 </div>
