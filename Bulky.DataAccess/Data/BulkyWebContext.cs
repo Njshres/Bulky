@@ -4,10 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Bulky.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace Bulky.DataAccess.Data
 {
-    public class BulkyWebContext : DbContext
+    public class BulkyWebContext : IdentityDbContext<IdentityUser>
     {
         public BulkyWebContext (DbContextOptions<BulkyWebContext> options)
             : base(options)
@@ -18,6 +20,7 @@ namespace Bulky.DataAccess.Data
         public DbSet<Product> Products { get; set; } = default!;
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Category>().HasData(
                 new Category { Id = 1, Name = "Action", DispalyOrder = 1 },
                     new Category { Id = 2, Name = "Scifi", DispalyOrder = 2 },
